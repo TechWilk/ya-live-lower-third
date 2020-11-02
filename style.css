@@ -17,26 +17,38 @@ html {
 
     max-width: calc(100vw - 2 * 5vmax);
 
-    background-color: white;
 }
 
 .line {
     padding: 0.2em;
-    padding-left: 12vmax;
-    padding-right: 0.4em;
+    padding-left: 13vmax;
+    padding-right: 0.8em;
+
+    left: -1vmax;
+
+    background-color: white;
 
     white-space: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     position: relative;
+
+    transform: skewX(-20deg);
 }
 
 .line::after {
     content: '';
-    width: 4vmax;
-    height: 1.4em;
-    color: tomato;
+    width: 1vmax;
+    height: 1.6em;
+    background-color: white;
 
     position: absolute;
-    right: -4vmax;
+    top: 0;
+    right: -2vmax;
+}
+
+.line span {
+    display: inline-block;
+    transform: skewX(20deg);
+
 }
