@@ -9,7 +9,7 @@ html {
 
 .overlay {
     opacity: 0;
-    transition: opacity 3s;
+    transition: opacity 1s;
 
     position: absolute;
     left: 0;
@@ -24,7 +24,7 @@ html {
     padding-left: 13vmax;
     padding-right: 0.8em;
 
-    left: -1vmax;
+    left: -100vmax;
 
     background-color: white;
 
@@ -34,21 +34,49 @@ html {
     position: relative;
 
     transform: skewX(-20deg);
+
+    transition: left 1.5s ease-out;
+}
+
+.line.show {
+    left: -1vmax;
 }
 
 .line::after {
     content: '';
-    width: 1vmax;
+    width: 0;
     height: 1.6em;
     background-color: white;
 
     position: absolute;
     top: 0;
     right: -2vmax;
+
+    transition: width 0.8s ease-out;
+    transition-delay: 1s;
+}
+
+.show.line::after {
+    width: 1vmax;
 }
 
 .line span {
     display: inline-block;
     transform: skewX(20deg);
 
+}
+
+.sub-line {
+    margin-left: 10vmax;
+    padding: 0.2em;
+    padding-left: 2vmax;
+    padding-right: 0.4em;
+
+    font-size: 0.5rem;
+    background-color: grey;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    position: relative;
 }
